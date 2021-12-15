@@ -17,6 +17,7 @@ const HeaderComponent = styled.header`
     top: 0;
     width: 100%;
     z-index: ${THEME_Z_INDEX.header};
+    background: #fff;
 
     > div {
         display: flex;
