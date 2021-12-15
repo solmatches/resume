@@ -116,7 +116,7 @@ export const GlobalStyles: FC<Props> = ({ fallback, children }) => {
         if (isLoading) {
             const notoSans = new FontFaceObserver('Noto Sans');
 
-            Promise.all([notoSans.load()]).then(() => {
+            notoSans.load().then(() => {
                 globalFontLoading = false;
                 setIsLoading(false);
             });
