@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 
-import regularWoff from './assets/NotoSansCJKkr-Regular.woff';
-import regularWoff2 from './assets/NotoSansCJKkr-Regular.woff2';
-import lightKrWoff from './assets/NotoSansCJKkr-Light.woff';
-import lightKrWoff2 from './assets/NotoSansCJKkr-Light.woff2';
-import lightWoff from './assets/NotoSans-Light.woff';
-import lightWoff2 from './assets/NotoSans-Light.woff2';
-import mediumWoff from './assets/NotoSans-Medium.woff';
-import mediumWoff2 from './assets/NotoSans-Medium.woff2';
+import regularWoff from './assets/font/NotoSansCJKkr-Regular.woff';
+import regularWoff2 from './assets/font/NotoSansCJKkr-Regular.woff2';
+import lightKrWoff from './assets/font/NotoSansCJKkr-Light.woff';
+import lightKrWoff2 from './assets/font/NotoSansCJKkr-Light.woff2';
+import lightWoff from './assets/font/NotoSans-Light.woff';
+import lightWoff2 from './assets/font/NotoSans-Light.woff2';
+import mediumWoff from './assets/font/NotoSans-Medium.woff';
+import mediumWoff2 from './assets/font/NotoSans-Medium.woff2';
 
 export const notoSansKrFontFamily = css`
     @font-face {
