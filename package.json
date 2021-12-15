@@ -1,11 +1,12 @@
 {
-    "name": "gro-resume",
+    "name": "sora-resume",
     "version": "1.0.0",
     "description": "프론트엔드 개발자 김소라의 이력서 페이지 입니다!",
     "private": true,
     "repository": "git@github.com:solmatches/solmatches.github.io.git",
-    "author": "Gro <solinepik@gmail.com>",
+    "author": "KimSora <solinepik@gmail.com>",
     "dependencies": {
+        "@craco/craco": "^6.4.3",
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
         "@testing-library/react": "^11.1.0",
@@ -24,9 +25,9 @@
         "web-vitals": "^1.0.1"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
         "eject": "react-scripts eject",
         "clean": "rm -rf ./node_modules && rm -rf ./yarn.lock",
         "predeploy": "yarn build",
@@ -54,6 +55,7 @@
         "@types/react-router-dom": "^5.3.2",
         "@typescript-eslint/eslint-plugin": "^5.7.0",
         "@typescript-eslint/parser": "^5.7.0",
+        "craco-alias": "^3.0.1",
         "eslint-config-prettier": "^8.3.0",
         "eslint-config-react-app": "^6.0.0",
         "eslint-plugin-prettier": "^4.0.0",
