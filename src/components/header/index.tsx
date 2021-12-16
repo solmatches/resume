@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { THEME_Z_INDEX } from '../../global-styles/constants';
+import {
+    THEME_COLOR,
+    THEME_SIZE,
+    THEME_Z_INDEX,
+} from '~/global-styles/constants';
 import LogoImage from '~/global-styles/assets/logo.svg';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link } from '../link';
@@ -17,12 +21,14 @@ const HeaderComponent = styled.header`
     top: 0;
     width: 100%;
     z-index: ${THEME_Z_INDEX.header};
-    background: #fff;
+    background: ${THEME_COLOR.mono0};
 
     > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: ${THEME_SIZE.contentMaxWidth};
+        margin: 0 auto;
         padding: 1rem 1.6rem;
     }
 `;
@@ -42,7 +48,7 @@ const Nav = styled.nav`
     }
 `;
 
-export const Header = () => {
+export const Header: FC = () => {
     return (
         <HeaderComponent>
             <div>

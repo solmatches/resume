@@ -2,6 +2,7 @@ import { css, Global } from '@emotion/react';
 import FontFaceObserver from 'fontfaceobserver';
 import React, { FC, useEffect, useState } from 'react';
 import { useRef } from 'react';
+import { THEME_COLOR } from './constants';
 import { notoSansFontFamily, notoSansKrFontFamily } from './font';
 
 interface Props {
@@ -29,8 +30,8 @@ const styles = () => css`
     body {
         -webkit-touch-callout: none;
         margin: 0;
-        background: #fff;
-        color: #121212;
+        background: ${THEME_COLOR.mono0};
+        color: ${THEME_COLOR.mono3};
         font-family: ${FONT_FAMILIES.join(',')};
         font-size: 1.6rem;
         font-weight: 400;
