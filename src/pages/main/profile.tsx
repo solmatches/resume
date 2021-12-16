@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import pitureMeWebp from '~/global-styles/assets/img/picture-me.webp';
 import pitureMeJpg from '~/global-styles/assets/img/picture-me.jpg';
 import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/global-styles/constants';
+import { Link } from '~/components';
 
 const Wrapper = styled.article`
     display: flex;
@@ -61,25 +62,24 @@ const Profile: FC = () => {
                     <source srcSet={pitureMeWebp} type="image/webp" />
                     <source srcSet={pitureMeJpg} type="image/jpeg" />
                     <Image src={pitureMeJpg} alt="김소라 입니다" />
+                    {/* TODO: 스켈레톤 적용 혹은 해상도 낮은 이미지 미리 로드 */}
                 </picture>
             </ImageWrapper>
             <ContactWrapper>
                 <p>
                     이메일 :::{' '}
-                    <a href="mailto:solinepik@gmail.com">solinepik@gmail.com</a>
+                    <Link to="mailto:solinepik@gmail.com">
+                        solinepik@gmail.com
+                    </Link>
                 </p>
                 <p>
-                    연락처 ::: <a href="tel:010-5367-8984">010-5367-8984</a>
+                    연락처 ::: <Link to="tel:010-5367-8984">010-5367-8984</Link>
                 </p>
                 <p>
                     Github :::{' '}
-                    <a
-                        href="https://github.com/solmatches"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <Link to="https://github.com/solmatches" target="_blank">
                         https://github.com/solmatches
-                    </a>
+                    </Link>
                 </p>
             </ContactWrapper>
         </Wrapper>

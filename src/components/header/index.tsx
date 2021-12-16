@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import {
     THEME_COLOR,
+    THEME_MEDIA_QUERY,
     THEME_SIZE,
     THEME_Z_INDEX,
 } from '~/global-styles/constants';
@@ -44,6 +45,9 @@ const Nav = styled.nav`
 
         + li {
             margin-left: 0.5em;
+            ${THEME_MEDIA_QUERY.mobile} {
+                margin-left: 0;
+            }
         }
     }
 `;
@@ -60,10 +64,14 @@ export const Header: FC = () => {
                 <Nav>
                     <ul>
                         <li>
-                            <Link to="/">소개</Link>
+                            <Link navigate to="/">
+                                소개
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/career">해온 것</Link>
+                            <Link navigate to="/career">
+                                해온 것
+                            </Link>
                         </li>
                     </ul>
                 </Nav>
