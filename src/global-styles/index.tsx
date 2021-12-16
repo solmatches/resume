@@ -17,7 +17,6 @@ const styles = () => css`
     div#root {
         width: 100%;
         height: 100%;
-        overflow: hidden;
     }
 
     html {
@@ -29,6 +28,7 @@ const styles = () => css`
     }
     body {
         -webkit-touch-callout: none;
+        overflow-y: scroll;
         margin: 0;
         background: ${THEME_COLOR.mono0};
         color: ${THEME_COLOR.mono3};
