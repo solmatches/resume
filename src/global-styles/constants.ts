@@ -4,13 +4,13 @@ function toMediaQuery(size: string): string {
 
 export const THEME_Z_INDEX = {
     header: 100,
-};
+} as const;
 
 export const THEME_SIZE = {
     contentMaxWidth: '1200px',
     tabletWidth: '768px',
     mobileWidth: '359px',
-};
+} as const;
 
 export const THEME_MEDIA_QUERY = {
     tablet: toMediaQuery(THEME_SIZE.tabletWidth),
@@ -23,4 +23,4 @@ export const THEME_COLOR = {
     mono1: '#f0f0f0',
     mono2: '#666666',
     mono3: '#121212',
-};
+} as const;
