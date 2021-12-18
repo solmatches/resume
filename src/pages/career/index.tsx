@@ -1,13 +1,15 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Chips, Link } from '~/components';
+import { useFadeAnimation } from '~/hooks/use-fade-animation';
 import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
 import Company from './company';
 import Project from './project';
 
 const Wrapper = styled.section`
     padding: 1.6rem;
+    overflow: hidden;
 
     h1 {
         margin-bottom: 4rem;
@@ -45,11 +47,19 @@ const RoleContent = styled.div`
 `;
 
 const Career: FC = () => {
+    const [target, setTaget] = useState<HTMLElement | null>(null);
+
+    useFadeAnimation({
+        target: target?.getElementsByTagName('li'),
+        options: {
+            threshold: 0.2,
+        },
+    });
+
     return (
         <Wrapper>
             <h1>경력</h1>
-            <article>
-                {/* TODO: IntersectionObserver 적용 */}
+            <article ref={setTaget}>
                 <Company
                     name="주피타카 주식회사"
                     role="FrontEnd Developer"

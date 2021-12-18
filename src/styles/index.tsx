@@ -28,6 +28,7 @@ const styles = () => css`
     }
     body {
         -webkit-touch-callout: none;
+        overflow: hidden;
         overflow-y: scroll;
         margin: 0;
         background: ${THEME_COLOR.mono0};
