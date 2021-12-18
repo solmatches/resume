@@ -6,17 +6,10 @@ import {
     THEME_SIZE,
     THEME_Z_INDEX,
 } from '~/styles/constants';
-import LogoImage from '~/styles/assets/logo.svg';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link } from '../link';
+import { Logo } from '../logo';
 
-const LOGO_SIZE = '36px';
-
-const Logo = styled.img`
-    display: inline-block;
-    width: ${LOGO_SIZE};
-    height: ${LOGO_SIZE};
-`;
 const HeaderComponent = styled.header`
     position: fixed;
     top: 0;
@@ -58,7 +51,7 @@ export const Header: FC = () => {
             <div>
                 <h1>
                     <RouterLink to="/">
-                        <Logo src={LogoImage} />
+                        <Logo />
                     </RouterLink>
                 </h1>
                 <Nav>
