@@ -94,6 +94,7 @@ const styles = () => css`
         box-shadow: none;
         -webkit-user-select: auto;
         -moz-user-select: text;
+        user-select: text;
     }
 
     *,
@@ -111,32 +112,30 @@ const styles = () => css`
 `;
 
 export const GlobalStyles: FC<Props> = ({ fallback, children }) => {
-    let { current: globalFontLoading } = useRef(false);
+    let { current: globalFontLoading } = useRef(true);
     const [isLoading, setIsLoading] = useState(globalFontLoading);
 
     useEffect(() => {
         if (isLoading) {
             const notoSans = new FontFaceObserver('Noto Sans');
+            const notoSansMedium = new FontFaceObserver('Noto Sans Medium');
+            const notoSansRegular = new FontFaceObserver('Noto Sans Regular');
 
-            notoSans.load().then(() => {
+            Promise.all([
+                notoSans.load(),
+                notoSansMedium.load(),
+                notoSansRegular.load(),
+            ]).then(() => {
                 globalFontLoading = false;
                 setIsLoading(false);
             });
         }
     }, []);
 
-    if (isLoading) {
-        return (
-            <>
-                <Global styles={styles} />
-                {fallback}
-            </>
-        );
-    }
-
     return (
         <>
             <Global styles={styles} />
+            {isLoading && fallback}
             {children}
         </>
     );

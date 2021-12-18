@@ -26,6 +26,14 @@ export const notoSansKrFontFamily = css`
         src: url('${regularWoff2}') format('woff2'),
             url('${regularWoff}') format('woff');
     }
+    @font-face {
+        font-family: 'Noto Sans Regular';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('${regularWoff2}') format('woff2'),
+            url('${regularWoff}') format('woff');
+    }
 `;
 
 export const notoSansFontFamily = css`
@@ -40,6 +48,15 @@ export const notoSansFontFamily = css`
     }
     @font-face {
         font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('${mediumWoff2}') format('woff2'),
+            url('${mediumWoff}') format('woff');
+        unicode-range: U+0020-007E;
+    }
+    @font-face {
+        font-family: 'Noto Sans Medium';
         font-style: normal;
         font-weight: 600;
         font-display: swap;
