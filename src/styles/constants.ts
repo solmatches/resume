@@ -4,6 +4,7 @@ function toMediaQuery(size: string): string {
 
 export const THEME_Z_INDEX = {
     header: 100,
+    modal: 200,
 } as const;
 
 export const THEME_SIZE = {
