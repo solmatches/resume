@@ -4,6 +4,9 @@ import pitureMeWebp from '~/styles/assets/img/picture-me.webp';
 import pitureMeJpg from '~/styles/assets/img/picture-me.jpg';
 import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
 import { Link } from '~/components';
+import { css } from '@emotion/react';
+
+const PRE_IMAGE_BACKGROUND = '#8bd2fc';
 
 const Wrapper = styled.article`
     display: flex;
@@ -44,13 +47,25 @@ const ImageWrapper = styled.div`
     overflow: hidden;
 `;
 
+const imageSize = css`
+    width: 150px;
+    height: 237px;
+`;
+
 const Image = styled.img`
     display: inline-block;
-    width: 100%;
-    max-width: 150px;
+    background: ${PRE_IMAGE_BACKGROUND};
+    ${imageSize}
 
+    ${THEME_MEDIA_QUERY.tablet} {
+        width: 100%;
+        height: 100%;
+        max-width: 150px;
+        min-width: 100px;
+        min-height: 158px;
+    }
     ${THEME_MEDIA_QUERY.mobile} {
-        width: 150px;
+        ${imageSize}
     }
 `;
 
@@ -62,7 +77,6 @@ const Profile: FC = () => {
                     <source srcSet={pitureMeWebp} type="image/webp" />
                     <source srcSet={pitureMeJpg} type="image/jpeg" />
                     <Image src={pitureMeJpg} alt="김소라 입니다" />
-                    {/* TODO: 스켈레톤 적용 혹은 해상도 낮은 이미지 미리 로드 */}
                 </picture>
             </ImageWrapper>
             <ContactWrapper>
