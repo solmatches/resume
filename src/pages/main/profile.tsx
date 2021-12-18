@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import pitureMeWebp from '~/global-styles/assets/img/picture-me.webp';
-import pitureMeJpg from '~/global-styles/assets/img/picture-me.jpg';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/global-styles/constants';
+import pitureMeWebp from '~/styles/assets/img/picture-me.webp';
+import pitureMeJpg from '~/styles/assets/img/picture-me.jpg';
+import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
 import { Link } from '~/components';
 
 const Wrapper = styled.article`

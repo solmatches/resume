@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/global-styles/constants';
+import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
 import Profile from './profile';
 import Skills from './skills';
 

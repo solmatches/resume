@@ -2,7 +2,7 @@
 import { css, SerializedStyles } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC, ReactElement } from 'react';
-import { THEME_COLOR } from '~/global-styles/constants';
+import { THEME_COLOR } from '~/styles/constants';
 
 interface Props {
     chips: string[] | ReactElement[];

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 import { Link } from '~/components';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/global-styles/constants';
+import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
 
 interface Props {
     name: string;
@@ -35,9 +35,16 @@ const CompanyInfo = styled.div`
 
 const Name = styled.h2`
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid ${THEME_COLOR.mono1};
     font-size: 1.2em;
     font-weight: 600;
     color: ${THEME_COLOR.mono3};
+
+    ${THEME_MEDIA_QUERY.tablet} {
+        padding-bottom: 0;
+        border: none;
+    }
 `;
 
 const Role = styled.p`

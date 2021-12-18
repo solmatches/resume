@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 import { Chips, Link } from '~/components';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/global-styles/constants';
+import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
 import Company from './company';
 import Project from './project';
 
@@ -49,6 +49,7 @@ const Career: FC = () => {
         <Wrapper>
             <h1>경력</h1>
             <article>
+                {/* TODO: IntersectionObserver 적용 */}
                 <Company
                     name="주피타카 주식회사"
                     role="FrontEnd Developer"

@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import React, { FC, useCallback, MouseEvent } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
-import { THEME_COLOR } from '~/global-styles/constants';
+import { THEME_COLOR } from '~/styles/constants';
 
 interface Props {
     to: string;

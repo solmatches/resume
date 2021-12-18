@@ -5,8 +5,8 @@ import {
     THEME_MEDIA_QUERY,
     THEME_SIZE,
     THEME_Z_INDEX,
-} from '~/global-styles/constants';
-import LogoImage from '~/global-styles/assets/logo.svg';
+} from '~/styles/constants';
+import LogoImage from '~/styles/assets/logo.svg';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link } from '../link';
 
