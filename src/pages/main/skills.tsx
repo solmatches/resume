@@ -21,7 +21,7 @@ const chip = css`
     }
 `;
 const Wrapper = styled.article`
-    margin-top: 4rem;
+    margin-top: 5rem;
 `;
 const Subject = styled.h2`
     margin-bottom: 2rem;

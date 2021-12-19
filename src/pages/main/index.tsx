@@ -1,11 +1,17 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
+import { Introduce } from './introduce';
 import Profile from './profile';
 import Skills from './skills';
 
 const Wrapper = styled.section`
-    padding: 1.6rem;
+    padding: 1.6rem 1.6rem 8rem;
+
+    article + article {
+        padding-top: 2em;
+        border-top: 1px solid ${THEME_COLOR.mono1};
+    }
 `;
 
 const Title = styled.h1`
@@ -41,9 +47,10 @@ const Main: FC = () => {
                 김소라
                 <span>Frontend Developer</span>
             </MobileTitle>
-            <p>사용자와 서비스의 정서적 유대를 추구하는 개발자</p>
+            <p>사용자와 나누는 유대감이 원동력인 개발자</p>
             <Profile />
             <Skills />
+            <Introduce />
         </Wrapper>
     );
 };

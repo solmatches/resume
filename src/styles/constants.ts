@@ -8,7 +8,7 @@ export const THEME_Z_INDEX = {
 } as const;
 
 export const THEME_SIZE = {
-    contentMaxWidth: '1200px',
+    contentMaxWidth: '1032px',
     tabletWidth: '768px',
     mobileWidth: '359px',
 } as const;

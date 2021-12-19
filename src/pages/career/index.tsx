@@ -52,7 +52,7 @@ const Career: FC = () => {
     useFadeAnimation({
         target: target?.getElementsByTagName('li'),
         options: {
-            threshold: 0.2,
+            threshold: 0.15,
         },
     });
 
@@ -70,7 +70,7 @@ const Career: FC = () => {
                         <h3>소상공인을 위한 매출관리 앱 개발</h3>
                         <ul>
                             <Project
-                                title="주카 앱 출시"
+                                title="주카 앱 출시 (서비스 종료 수순)"
                                 serviceDescription={[
                                     '하이브리드 웹앱',
                                     '카드매출, 배달매출, 홈택스 매출 통합 관리',

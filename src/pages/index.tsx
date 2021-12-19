@@ -15,7 +15,7 @@ const Content = styled.main`
 
     ${THEME_MEDIA_QUERY.tablet} {
         > section {
-            padding: 2.2rem;
+            padding: 2.2rem 2.2rem 5rem;
         }
     }
 `;
