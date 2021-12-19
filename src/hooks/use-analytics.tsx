@@ -18,5 +18,9 @@ export function useAnalytics(): void {
     useEffect(() => {
         const currentPath = `${location.pathname}${location.search}`;
         ReactGA.set({ hitType: 'pageview', page: currentPath });
+        ReactGA.event({
+            category: currentPath,
+            action: 'show',
+        });
     }, [location]);
 }
