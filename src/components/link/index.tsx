@@ -52,6 +52,7 @@ export const Link: FC<Props> = ({
     const handleClick = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
         if (navigateProps) {
             event.preventDefault();
+            window.scrollTo({ top: 0 });
             navigate(to);
         }
     }, []);
