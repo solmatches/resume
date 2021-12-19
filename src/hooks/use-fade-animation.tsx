@@ -9,7 +9,7 @@ interface UseIntersectionProps {
 export function useFadeAnimation({
     target,
     options = {},
-}: UseIntersectionProps) {
+}: UseIntersectionProps): void {
     const intersection = useCallback(
         async (
             entries: IntersectionObserverEntry[],
