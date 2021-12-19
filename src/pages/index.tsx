@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import { Header } from '~/components';
+import { useAnalytics } from '~/hooks/use-analytics';
 import { THEME_MEDIA_QUERY, THEME_SIZE } from '~/styles/constants';
 import Career from './career';
 import Main from './main';
@@ -21,6 +22,8 @@ const Content = styled.main`
 `;
 
 const Pages: FC = () => {
+    useAnalytics();
+
     return (
         <>
             <Header />
