@@ -24,7 +24,7 @@ const Container = styled.div`
 `;
 
 const CompanyInfo = styled.div`
-    min-width: 30vw;
+    min-width: 30rem;
     line-height: 1.5;
 
     ${THEME_MEDIA_QUERY.tablet} {
