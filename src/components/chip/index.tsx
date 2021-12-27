@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css, SerializedStyles } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC, ReactElement } from 'react';

@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { FC, useCallback, MouseEvent } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
