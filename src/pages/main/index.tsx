@@ -47,7 +47,7 @@ const Main: FC = () => {
                 김소라
                 <span>Frontend Developer</span>
             </MobileTitle>
-            <p>사용자와 나누는 유대감이 원동력인 개발자</p>
+            <p>사용자로부터 성장의 즐거움을 찾는 개발자</p>
             <Profile />
             <Skills />
             <Introduce />
