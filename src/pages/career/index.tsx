@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import React, { FC, useState } from 'react';
 import { Chips, Link } from '~/components';
 import { useFadeAnimation } from '~/hooks/use-fade-animation';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
+import { THEME_MEDIA_QUERY } from '~/styles/constants';
 import Company from './company';
 import Project from './project';
 
@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
 const LightText = styled.p`
     margin-bottom: 1rem;
-    color: ${THEME_COLOR.mono2};
+    color: ${({ theme }) => theme.color.mono2};
     font-size: 0.9em;
 `;
 

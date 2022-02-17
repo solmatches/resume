@@ -1,9 +1,11 @@
-import { css, Global } from '@emotion/react';
+import { css, Global, Theme, ThemeProvider } from '@emotion/react';
 import FontFaceObserver from 'fontfaceobserver';
 import React, { FC, useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { THEME_COLOR } from './constants';
 import { notoSansFontFamily, notoSansKrFontFamily } from './font';
+
+type ThemeType = keyof typeof THEME_COLOR;
 
 interface Props {
     fallback: React.ReactElement;
@@ -11,7 +13,20 @@ interface Props {
 
 const FONT_FAMILIES = ['-apple-system', '"Noto Sans"', 'sans-serif'];
 
-const styles = () => css`
+const initialBrowserTheme = (): ThemeType => {
+    let browserTheme = window.localStorage.getItem(
+        'browser_theme',
+    ) as ThemeType | null;
+    const INVALID_THEME = browserTheme !== 'light' && browserTheme !== 'dark';
+
+    if (!browserTheme || INVALID_THEME) {
+        const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
+        browserTheme = matches ? 'dark' : 'light';
+    }
+    return browserTheme;
+};
+
+const styles = (theme: Theme) => css`
     html,
     body,
     div#root {
@@ -31,8 +46,8 @@ const styles = () => css`
         overflow: hidden;
         overflow-y: scroll;
         margin: 0;
-        background: ${THEME_COLOR.mono0};
-        color: ${THEME_COLOR.mono3};
+        background: ${theme.color.mono0};
+        color: ${theme.color.mono3};
         font-family: ${FONT_FAMILIES.join(',')};
         font-size: 1.6rem;
         font-weight: 400;
@@ -63,6 +78,8 @@ const styles = () => css`
     }
     a,
     button {
+        padding: 0;
+        border: none;
         outline: none;
         font-family: inherit;
         cursor: pointer;
@@ -111,9 +128,16 @@ const styles = () => css`
     ${notoSansKrFontFamily}
 `;
 
+export const ThemeContext = React.createContext<{
+    theme: ThemeType;
+    toggle?: () => void;
+}>({ theme: 'light' });
+
 export const GlobalStyles: FC<Props> = ({ fallback, children }) => {
     let { current: globalFontLoading } = useRef(true);
     const [isLoading, setIsLoading] = useState(globalFontLoading);
+    const [browserTheme, setBrowserTheme] =
+        useState<ThemeType>(initialBrowserTheme);
 
     useEffect(() => {
         if (isLoading) {
@@ -133,10 +157,22 @@ export const GlobalStyles: FC<Props> = ({ fallback, children }) => {
     }, []);
 
     return (
-        <>
-            <Global styles={styles} />
-            {isLoading && fallback}
-            {children}
-        </>
+        <ThemeContext.Provider
+            value={{
+                theme: browserTheme,
+                toggle: () => {
+                    const changeValue =
+                        browserTheme === 'light' ? 'dark' : 'light';
+                    window.localStorage.setItem('browser_theme', changeValue);
+                    setBrowserTheme(changeValue);
+                },
+            }}
+        >
+            <ThemeProvider theme={{ color: THEME_COLOR[browserTheme] }}>
+                <Global styles={styles} />
+                {isLoading && fallback}
+                {children}
+            </ThemeProvider>
+        </ThemeContext.Provider>
     );
 };

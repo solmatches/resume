@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
+import { THEME_MEDIA_QUERY } from '~/styles/constants';
 import { Introduce } from './introduce';
 import Profile from './profile';
 import Skills from './skills';
@@ -10,7 +10,7 @@ const Wrapper = styled.section`
 
     article + article {
         padding-top: 2em;
-        border-top: 1px solid ${THEME_COLOR.mono1};
+        border-top: 1px solid ${({ theme }) => theme.color.mono1};
     }
 `;
 
@@ -29,7 +29,7 @@ const MobileTitle = styled.h1`
         display: inline-block;
         margin-bottom: 2rem;
         padding-bottom: 0.5em;
-        border-bottom: 2px solid ${THEME_COLOR.mono3};
+        border-bottom: 2px solid ${({ theme }) => theme.color.mono3};
 
         span {
             display: block;

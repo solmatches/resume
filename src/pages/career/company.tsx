@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 import { Link } from '~/components';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
+import { THEME_MEDIA_QUERY } from '~/styles/constants';
 
 interface Props {
     name: string;
@@ -29,17 +29,17 @@ const CompanyInfo = styled.div`
 
     ${THEME_MEDIA_QUERY.tablet} {
         padding-bottom: 2rem;
-        border-bottom: 2px solid ${THEME_COLOR.mono3};
+        border-bottom: 2px solid ${({ theme }) => theme.color.mono3};
     }
 `;
 
 const Name = styled.h2`
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid ${THEME_COLOR.mono1};
+    border-bottom: 1px solid ${({ theme }) => theme.color.mono1};
     font-size: 1.2em;
     font-weight: 600;
-    color: ${THEME_COLOR.mono3};
+    color: ${({ theme }) => theme.color.mono3};
 
     ${THEME_MEDIA_QUERY.tablet} {
         padding-bottom: 0;
@@ -52,7 +52,7 @@ const Role = styled.p`
 `;
 
 const LightText = styled.p`
-    color: ${THEME_COLOR.mono2};
+    color: ${({ theme }) => theme.color.mono2};
 `;
 
 const Company: FC<Props> = ({ name, role, period, homepage, children }) => {

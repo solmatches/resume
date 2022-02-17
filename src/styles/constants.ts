@@ -19,9 +19,18 @@ export const THEME_MEDIA_QUERY = {
 };
 
 export const THEME_COLOR = {
-    primary: '#bb5409',
-    mono0: '#ffffff',
-    mono1: '#f0f0f0',
-    mono2: '#666666',
-    mono3: '#121212',
+    light: {
+        primary: '#bb5409',
+        mono0: '#ffffff',
+        mono1: '#f0f0f0',
+        mono2: '#666666',
+        mono3: '#121212',
+    },
+    dark: {
+        primary: 'tomato',
+        mono3: '#ffffff',
+        mono2: '#f0f0f0',
+        mono1: '#666666',
+        mono0: '#121212',
+    },
 } as const;

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React, { FC } from 'react';
 import pitureMeWebp from '~/styles/assets/img/picture-me.webp';
 import pitureMeJpg from '~/styles/assets/img/picture-me.jpg';
-import { THEME_COLOR, THEME_MEDIA_QUERY } from '~/styles/constants';
+import { THEME_MEDIA_QUERY } from '~/styles/constants';
 import { Link } from '~/components';
 import { css } from '@emotion/react';
 
@@ -26,16 +26,16 @@ const ContactWrapper = styled.div`
     p {
         line-height: 1.5;
         word-break: break-word;
-        color: ${THEME_COLOR.mono2};
+        color: ${({ theme }) => theme.color.mono2};
 
         + p {
             margin-top: 1rem;
         }
         a {
-            color: ${THEME_COLOR.mono3};
+            color: ${({ theme }) => theme.color.mono3};
 
             &:hover {
-                color: ${THEME_COLOR.primary};
+                color: ${({ theme }) => theme.color.primary};
             }
         }
     }

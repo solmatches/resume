@@ -1,7 +1,6 @@
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import React, { FC, useCallback, MouseEvent } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
-import { THEME_COLOR } from '~/styles/constants';
 
 interface Props {
     to: string;
@@ -21,6 +20,8 @@ const activeStyle = (isActive: boolean) => css`
 `;
 
 const style = (isNavigate: boolean, isActive: boolean) => {
+    const theme = useTheme();
+
     if (isNavigate) {
         return css`
             &:hover {
@@ -30,10 +31,9 @@ const style = (isNavigate: boolean, isActive: boolean) => {
         `;
     }
     return css`
-        color: ${THEME_COLOR.mono3};
-
+        color: ${theme.color.mono3};
         &:hover {
-            color: ${THEME_COLOR.primary};
+            color: ${theme.color.primary};
         }
     `;
 };

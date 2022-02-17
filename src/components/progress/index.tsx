@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import React, { useState, useEffect, useRef, FC } from 'react';
-import { THEME_COLOR } from '~/styles/constants';
 import { Logo } from '../logo';
 
 const initCy = 25;
@@ -15,8 +14,8 @@ const Loadings = styled.svg`
     height: 54px;
 
     circle {
-        fill: ${THEME_COLOR.primary};
-        stroke: ${THEME_COLOR.mono1};
+        fill: ${({ theme }) => theme.color.primary};
+        stroke: ${({ theme }) => theme.color.mono1};
     }
 `;
 
