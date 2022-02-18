@@ -1,4 +1,9 @@
-import { css, Global, Theme, ThemeProvider } from '@emotion/react';
+import {
+    css,
+    Global,
+    Theme,
+    ThemeProvider as EmotionThemeProvider,
+} from '@emotion/react';
 import FontFaceObserver from 'fontfaceobserver';
 import React, { FC, useEffect, useState } from 'react';
 import { useRef } from 'react';
@@ -26,7 +31,7 @@ const initialBrowserTheme = (): ThemeType => {
     return browserTheme;
 };
 
-const styles = (theme: Theme) => css`
+const reset = (theme: Theme) => css`
     html,
     body,
     div#root {
@@ -133,7 +138,7 @@ export const ThemeContext = React.createContext<{
     toggle?: () => void;
 }>({ theme: 'light' });
 
-export const GlobalStyles: FC<Props> = ({ fallback, children }) => {
+export const ThemeProvider: FC<Props> = ({ fallback, children }) => {
     let { current: globalFontLoading } = useRef(true);
     const [isLoading, setIsLoading] = useState(globalFontLoading);
     const [browserTheme, setBrowserTheme] =
@@ -168,11 +173,11 @@ export const GlobalStyles: FC<Props> = ({ fallback, children }) => {
                 },
             }}
         >
-            <ThemeProvider theme={{ color: THEME_COLOR[browserTheme] }}>
-                <Global styles={styles} />
+            <EmotionThemeProvider theme={{ color: THEME_COLOR[browserTheme] }}>
+                <Global styles={reset} />
                 {isLoading && fallback}
                 {children}
-            </ThemeProvider>
+            </EmotionThemeProvider>
         </ThemeContext.Provider>
     );
 };

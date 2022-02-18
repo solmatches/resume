@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Pages from './pages';
 import { HashRouter as Router } from 'react-router-dom';
-import { GlobalStyles } from './styles';
+import { ThemeProvider } from './styles';
 import { Progress } from './components';
 import styled from '@emotion/styled';
 import { THEME_Z_INDEX } from './styles/constants';
@@ -26,8 +26,7 @@ const ProgressWrppaer = styled.div`
 
 ReactDOM.render(
     <React.StrictMode>
-        {/* TODO: 브라우저 테마 선택에 따른 테마 전환. 미디어 쿼리 */}
-        <GlobalStyles
+        <ThemeProvider
             fallback={
                 <ProgressWrppaer>
                     <Progress />
@@ -37,7 +36,7 @@ ReactDOM.render(
             <Router>
                 <Pages />
             </Router>
-        </GlobalStyles>
+        </ThemeProvider>
     </React.StrictMode>,
     document.getElementById('root'),
 );
