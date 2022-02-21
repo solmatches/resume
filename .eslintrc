@@ -5,6 +5,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
     ],
+    "plugins": ["simple-import-sort"],
     "parserOptions": {
         "ecmaVersion": 6,
         "ecmaFeatures": {
@@ -12,6 +13,9 @@
         }
     },
     "rules": {
+        "sort-imports": 0,
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
         "prettier/prettier": [
             "error",
             {
@@ -23,7 +27,6 @@
                 "endOfLine": "auto",
                 "trailingComma": "all"
             }
-        ],
-        "react/jsx-uses-vars": "error"
+        ]
     }
 }
