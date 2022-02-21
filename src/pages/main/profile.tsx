@@ -1,10 +1,11 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import pitureMeWebp from '~/styles/assets/img/picture-me.webp';
-import pitureMeJpg from '~/styles/assets/img/picture-me.jpg';
-import { THEME_MEDIA_QUERY } from '~/styles/constants';
+
 import { Link } from '~/components';
-import { css } from '@emotion/react';
+import pitureMeJpg from '~/styles/assets/img/picture-me.jpg';
+import pitureMeWebp from '~/styles/assets/img/picture-me.webp';
+import { THEME_MEDIA_QUERY } from '~/styles/constants';
 
 const PRE_IMAGE_BACKGROUND = '#8bd2fc';
 

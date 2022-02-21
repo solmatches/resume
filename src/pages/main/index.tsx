@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
+
 import { THEME_MEDIA_QUERY } from '~/styles/constants';
+
 import { Introduce } from './introduce';
 import Profile from './profile';
 import Skills from './skills';

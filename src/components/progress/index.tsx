@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import React, { useState, useEffect, useRef, FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
+
 import { Logo } from '../logo';
 
 const initCy = 25;
