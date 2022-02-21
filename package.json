@@ -34,11 +34,6 @@
         "predeploy": "yarn build",
         "deploy": "gh-pages -b master -d build"
     },
-    "eslintConfig": {
-        "extends": [
-            "react-app"
-        ]
-    },
     "browserslist": {
         "production": [
             ">0.2%",
