@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 import { Logo } from '../logo';
 

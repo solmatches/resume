@@ -4,7 +4,10 @@ const CracoAlias = require('craco-alias');
 module.exports = {
     babel: {
         presets: ['@emotion/babel-preset-css-prop'],
-        plugins: ['@emotion'],
+        plugins: [
+            '@emotion',
+            ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }],
+        ],
     },
     plugins: [
         {

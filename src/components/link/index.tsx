@@ -1,5 +1,5 @@
 import { css, useTheme } from '@emotion/react';
-import React, { FC, MouseEvent, useCallback } from 'react';
+import { FC, MouseEvent, useCallback } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 interface Props {

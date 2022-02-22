@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { THEME_MEDIA_QUERY } from '~/styles/constants';
 
