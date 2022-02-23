@@ -33,7 +33,7 @@ const Skills: FC = () => {
     return (
         <Wrapper>
             <Subject>Skills</Subject>
-            <Chips chips={SKILLS} css={chip} />
+            <Chips chips={SKILLS} cssProps={chip} />
         </Wrapper>
     );
 };

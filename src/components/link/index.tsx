@@ -1,4 +1,4 @@
-import { css, useTheme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 import { FC, MouseEvent, useCallback } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
@@ -19,9 +19,7 @@ const activeStyle = (isActive: boolean) => css`
     }
 `;
 
-const style = (isNavigate: boolean, isActive: boolean) => {
-    const theme = useTheme();
-
+const style = (isNavigate: boolean, isActive: boolean, theme: Theme) => {
     if (isNavigate) {
         return css`
             &:hover {
@@ -40,7 +38,7 @@ const style = (isNavigate: boolean, isActive: boolean) => {
 
 export const Link: FC<Props> = ({
     to,
-    navigate: navigateProps = false,
+    navigate: isNavigate = false,
     children,
     ...props
 }) => {
@@ -49,7 +47,7 @@ export const Link: FC<Props> = ({
     const match = useMatch({ path: resolved.pathname, end: true });
 
     const handleClick = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
-        if (navigateProps) {
+        if (isNavigate) {
             event.preventDefault();
             window.scrollTo({ top: 0 });
             navigate(to);
@@ -60,7 +58,7 @@ export const Link: FC<Props> = ({
         <a
             {...props}
             href={to}
-            css={style(navigateProps, !!match)}
+            css={(theme) => style(isNavigate, !!match, theme)}
             onClick={handleClick}
         >
             {children}
