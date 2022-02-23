@@ -52,7 +52,6 @@
         "@babel/plugin-syntax-flow": "^7.16.7",
         "@babel/plugin-transform-react-jsx": "^7.17.3",
         "@emotion/babel-plugin": "^11.7.2",
-        "@emotion/babel-preset-css-prop": "^11.2.0",
         "@testing-library/dom": "^8.11.3",
         "@types/babel__core": "^7",
         "@types/eslint": "^8",

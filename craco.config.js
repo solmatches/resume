@@ -3,10 +3,18 @@ const CracoAlias = require('craco-alias');
 
 module.exports = {
     babel: {
-        presets: ['@emotion/babel-preset-css-prop'],
         plugins: [
-            '@emotion',
-            ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }],
+            [
+                '@babel/plugin-transform-react-jsx',
+                { runtime: 'automatic', importSource: '@emotion/react' },
+            ],
+            [
+                '@emotion',
+                {
+                    autoLabel: 'dev-only',
+                    labelFormat: '[local]',
+                },
+            ],
         ],
     },
     plugins: [
@@ -19,4 +27,9 @@ module.exports = {
             },
         },
     ],
+    devServer: {
+        client: {
+            overlay: false,
+        },
+    },
 };
