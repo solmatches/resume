@@ -27,7 +27,7 @@ export const THEME_COLOR = {
         mono3: '#121212',
     },
     dark: {
-        primary: 'tomato',
+        primary: '#e99d66',
         mono3: '#ffffff',
         mono2: '#f0f0f0',
         mono1: '#666666',
