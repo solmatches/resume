@@ -6,7 +6,7 @@ import { ThemeContext } from '~/styles';
 import { ReactComponent as IconDark } from '~/styles/assets/img/theme-dark.svg';
 import { ReactComponent as IconLight } from '~/styles/assets/img/theme-light.svg';
 import { THEME_Z_INDEX } from '~/styles/constants';
-import { hex2rgba } from '~/utils/hex-to-rgb';
+import { hexToRgba } from '~/utils/hex-to-rgb';
 
 const activeStyle = (active: boolean) => css`
     transform: ${`scale(${active ? 0 : 1}) rotate(${active ? 180 : 0}deg)`};
@@ -22,7 +22,7 @@ const Toggle = styled.button<{ active: boolean }>`
     border-radius: 50%;
     background: ${({ theme }) => theme.color.mono0};
     box-shadow: ${({ theme }) =>
-        `0 0 10px 1px ${hex2rgba(theme.color.mono3, 0.1)}`};
+        `0 0 10px 1px ${hexToRgba(theme.color.mono3, 0.1)}`};
 
     &:hover {
         background: ${({ theme }) => theme.color.mono1};

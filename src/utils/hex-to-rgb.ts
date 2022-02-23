@@ -1,4 +1,4 @@
-export function hex2rgba(hex: string, alpha = 1): string {
+export function hexToRgba(hex: string, alpha = 1): string {
     if (hex?.length !== 7) {
         throw new Error(`hex 코드는 '#'포함 7자리 형식만 지원됩니다.`);
     }
