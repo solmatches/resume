@@ -4,19 +4,18 @@ import {
     Theme,
     ThemeProvider as EmotionThemeProvider,
 } from '@emotion/react';
-import FontFaceObserver from 'fontfaceobserver';
+// import FontFaceObserver from 'fontfaceobserver';
 import React, { FC, useEffect, useState } from 'react';
-import { useRef } from 'react';
+
 import { THEME_COLOR } from './constants';
-import { notoSansFontFamily, notoSansKrFontFamily } from './font';
 
 type ThemeType = keyof typeof THEME_COLOR;
 
 interface Props {
-    fallback: React.ReactElement;
+    fallback?: React.ReactElement;
 }
 
-const FONT_FAMILIES = ['-apple-system', '"Noto Sans"', 'sans-serif'];
+const FONT_FAMILIES = ['-apple-system', '"Noto Sans KR"', 'sans-serif'];
 
 const initialBrowserTheme = (): ThemeType => {
     let browserTheme = window.localStorage.getItem(
@@ -53,7 +52,7 @@ const reset = (theme: Theme) => css`
         margin: 0;
         background: ${theme.color.mono0};
         color: ${theme.color.mono3};
-        font-family: ${FONT_FAMILIES.join(',')};
+        font-family: ${FONT_FAMILIES.join(', ')};
         font-size: 1.6rem;
         font-weight: 400;
     }
@@ -66,7 +65,6 @@ const reset = (theme: Theme) => css`
     h6,
     p {
         margin: 0;
-        user-select: none;
     }
     ol,
     ul,
@@ -74,12 +72,10 @@ const reset = (theme: Theme) => css`
         margin: 0;
         padding: 0;
         list-style: none;
-        user-select: none;
     }
     a {
         color: inherit;
         text-decoration: none;
-        user-select: none;
     }
     a,
     button {
@@ -87,28 +83,10 @@ const reset = (theme: Theme) => css`
         border: none;
         outline: none;
         font-family: inherit;
+        font-size: inherit;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    }
-    html,
-    body,
-    div,
-    span,
-    nav,
-    header,
-    footer,
-    menu,
-    main,
-    table,
-    thead,
-    tbody,
-    tfoot,
-    tr,
-    td,
-    th,
-    form,
-    label {
-        user-select: none;
+        background-color: transparent;
     }
 
     input,
@@ -128,9 +106,6 @@ const reset = (theme: Theme) => css`
     *:focus {
         outline: none !important;
     }
-
-    ${notoSansFontFamily}
-    ${notoSansKrFontFamily}
 `;
 
 export const ThemeContext = React.createContext<{
@@ -138,27 +113,24 @@ export const ThemeContext = React.createContext<{
     toggle?: () => void;
 }>({ theme: 'light' });
 
-export const ThemeProvider: FC<Props> = ({ fallback, children }) => {
-    let { current: globalFontLoading } = useRef(true);
-    const [isLoading, setIsLoading] = useState(globalFontLoading);
+// const FONT_LOAD_TIMEOUT = 800;
+
+export const ThemeProvider: FC<Props> = ({ children }) => {
+    // const [loading, setLoading] = useState(false);
     const [browserTheme, setBrowserTheme] =
         useState<ThemeType>(initialBrowserTheme);
 
     useEffect(() => {
-        if (isLoading) {
-            const notoSans = new FontFaceObserver('Noto Sans');
-            const notoSansMedium = new FontFaceObserver('Noto Sans Medium');
-            const notoSansRegular = new FontFaceObserver('Noto Sans Regular');
-
-            Promise.all([
-                notoSans.load(),
-                notoSansMedium.load(),
-                notoSansRegular.load(),
-            ]).then(() => {
-                globalFontLoading = false;
-                setIsLoading(false);
-            });
-        }
+        // const notoSans = new FontFaceObserver('Noto Sans KR');
+        // notoSans
+        //     .load(null, FONT_LOAD_TIMEOUT)
+        //     .then(() => {
+        //         setLoading(true);
+        //     })
+        //     .catch(() => {
+        //         setLoading(true);
+        //         console.error('폰트 로딩 실패');
+        //     });
     }, []);
 
     return (
@@ -175,7 +147,6 @@ export const ThemeProvider: FC<Props> = ({ fallback, children }) => {
         >
             <EmotionThemeProvider theme={{ color: THEME_COLOR[browserTheme] }}>
                 <Global styles={reset} />
-                {isLoading && fallback}
                 {children}
             </EmotionThemeProvider>
         </ThemeContext.Provider>

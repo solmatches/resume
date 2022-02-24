@@ -1,38 +1,17 @@
+import '@fontsource/noto-sans-kr/400.css';
+import '@fontsource/noto-sans-kr/700.css';
+import '@fontsource/noto-sans-kr/900.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Pages from './pages';
 import { HashRouter as Router } from 'react-router-dom';
+
+import Pages from './pages';
 import { ThemeProvider } from './styles';
-import { Progress } from './components';
-import styled from '@emotion/styled';
-import { THEME_Z_INDEX } from './styles/constants';
-
-const BLUR_VALUE = '8px';
-
-const ProgressWrppaer = styled.div`
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: ${THEME_Z_INDEX.modal};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    -webkit-backdrop-filter: blur(${BLUR_VALUE});
-    backdrop-filter: blur(${BLUR_VALUE});
-`;
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider
-            fallback={
-                <ProgressWrppaer>
-                    <Progress />
-                </ProgressWrppaer>
-            }
-        >
+        <ThemeProvider>
             <Router>
                 <Pages />
             </Router>
