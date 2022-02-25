@@ -1,40 +1,31 @@
 import styled from '@emotion/styled';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
-import { Header } from '~/components';
+
+import { ThemeSwitch } from '~/components';
 import { useAnalytics } from '~/hooks/use-analytics';
-import { THEME_MEDIA_QUERY, THEME_SIZE } from '~/styles/constants';
-import Career from './career';
+import { THEME_SIZE } from '~/styles/constants';
+
 import Main from './main';
 
 const Content = styled.main`
     width: 100%;
     max-width: ${THEME_SIZE.contentMaxWidth};
     margin: 0 auto;
-    padding-top: 100px;
-
-    ${THEME_MEDIA_QUERY.tablet} {
-        > section {
-            padding: 2.2rem 2.2rem 5rem;
-        }
-    }
 `;
 
 const Pages: FC = () => {
     useAnalytics();
 
     return (
-        <>
-            <Header />
-            <Content>
-                <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/career" element={<Career />} />
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
-            </Content>
-        </>
+        <Content>
+            <ThemeSwitch />
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </Content>
     );
 };
 

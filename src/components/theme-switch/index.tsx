@@ -22,7 +22,7 @@ const Toggle = styled.button<{ active: boolean }>`
     border-radius: 50%;
     background: ${({ theme }) => theme.color.mono0};
     box-shadow: ${({ theme }) =>
-        `0 0 10px 1px ${hexToRgba(theme.color.mono3, 0.1)}`};
+        `0 0 10px 1px ${hexToRgba(theme.color.mono4, 0.1)}`};
 
     &:hover {
         background: ${({ theme }) => theme.color.mono1};

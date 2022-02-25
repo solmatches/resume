@@ -4,8 +4,7 @@ import {
     Theme,
     ThemeProvider as EmotionThemeProvider,
 } from '@emotion/react';
-// import FontFaceObserver from 'fontfaceobserver';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import { THEME_COLOR } from './constants';
 
@@ -51,7 +50,7 @@ const reset = (theme: Theme) => css`
         overflow-y: scroll;
         margin: 0;
         background: ${theme.color.mono0};
-        color: ${theme.color.mono3};
+        color: ${theme.color.mono4};
         font-family: ${FONT_FAMILIES.join(', ')};
         font-size: 1.6rem;
         font-weight: 400;
@@ -113,25 +112,9 @@ export const ThemeContext = React.createContext<{
     toggle?: () => void;
 }>({ theme: 'light' });
 
-// const FONT_LOAD_TIMEOUT = 800;
-
 export const ThemeProvider: FC<Props> = ({ children }) => {
-    // const [loading, setLoading] = useState(false);
     const [browserTheme, setBrowserTheme] =
         useState<ThemeType>(initialBrowserTheme);
-
-    useEffect(() => {
-        // const notoSans = new FontFaceObserver('Noto Sans KR');
-        // notoSans
-        //     .load(null, FONT_LOAD_TIMEOUT)
-        //     .then(() => {
-        //         setLoading(true);
-        //     })
-        //     .catch(() => {
-        //         setLoading(true);
-        //         console.error('폰트 로딩 실패');
-        //     });
-    }, []);
 
     return (
         <ThemeContext.Provider

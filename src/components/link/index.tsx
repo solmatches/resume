@@ -29,7 +29,7 @@ const style = (isNavigate: boolean, isActive: boolean, theme: Theme) => {
         `;
     }
     return css`
-        color: ${theme.color.mono3};
+        color: ${theme.color.mono4};
         &:hover {
             color: ${theme.color.primary};
         }
