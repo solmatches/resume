@@ -7,6 +7,7 @@ export const ListItem = styled.li`
 
     &::before {
         content: '';
+        flex-shrink: 0;
         display: inline-block;
         width: 0.25em;
         height: 0.25em;
