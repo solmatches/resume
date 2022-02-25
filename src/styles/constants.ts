@@ -32,8 +32,8 @@ export const THEME_COLOR = {
         primary: '#e99d66',
         mono0: '#121212',
         mono1: '#323232',
-        mono2: '#666666',
-        mono3: '#f0f0f0',
+        mono2: '#a5a5a5',
+        mono3: '#d1d1d1',
         mono4: '#ffffff',
     },
 } as const;

@@ -3,12 +3,14 @@ import { FC } from 'react';
 
 import { THEME_MEDIA_QUERY } from '~/styles/constants';
 
+import Career from './career';
 import { Introduce } from './introduce';
 
 const Main: FC = () => {
     return (
         <Wrapper>
             <Introduce />
+            <Career />
         </Wrapper>
     );
 };
