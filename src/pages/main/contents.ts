@@ -109,7 +109,7 @@ export const skills = [
         list: [
             'React, Vue의 컴포넌트 라이프 사이클을 상황에 맞게 적용할 수 있습니다.',
             '재사용성을 고려하여 명확한 목적이 있는 Custom Hook을 작성합니다.',
-            'ContextAPI, Mobx, Redux, Veux를 이용해 웹 어플리케이션 상태 관리를 해본 경험이 있습니다.',
+            'ContextAPI, Mobx, Redux, Vuex를 이용해 웹 어플리케이션 상태 관리를 해본 경험이 있습니다.',
             'Storybook을 사용한 컴포넌트 개발 및 문서화 경험이 있습니다.',
         ],
     },

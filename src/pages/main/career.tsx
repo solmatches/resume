@@ -18,7 +18,6 @@ const Projects: FC<{ projects: Career['projects'] }> = ({ projects }) => {
     return (
         <Box
             style={css`
-                padding: 1rem 0;
                 flex: 2;
             `}
         >
@@ -26,6 +25,11 @@ const Projects: FC<{ projects: Career['projects'] }> = ({ projects }) => {
                 <Box
                     key={title}
                     style={css`
+                        ${THEME_MEDIA_QUERY.medium} {
+                            &:first-of-type {
+                                margin-top: 0;
+                            }
+                        }
                         margin-top: 5rem;
                         line-height: 1.5;
                     `}
