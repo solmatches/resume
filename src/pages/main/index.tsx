@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 
-import { THEME_MEDIA_QUERY } from '~/styles/constants';
+import { THEME_MEDIA_QUERY } from '~/theme/constants';
 
 import Career from './career';
 import { Introduce } from './introduce';

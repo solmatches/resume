@@ -2,10 +2,10 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, useContext, useState } from 'react';
 
-import { ThemeContext } from '~/styles';
-import { ReactComponent as IconDark } from '~/styles/assets/img/theme-dark.svg';
-import { ReactComponent as IconLight } from '~/styles/assets/img/theme-light.svg';
-import { THEME_Z_INDEX } from '~/styles/constants';
+import { ReactComponent as IconDark } from '~/assets/svg/theme-dark.svg';
+import { ReactComponent as IconLight } from '~/assets/svg/theme-light.svg';
+import { ThemeContext } from '~/theme';
+import { THEME_Z_INDEX } from '~/theme/constants';
 import { hexToRgba } from '~/utils/hex-to-rgb';
 
 const activeStyle = (active: boolean) => css`

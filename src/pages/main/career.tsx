@@ -8,7 +8,7 @@ import {
     ListItem,
     Text,
 } from '~/components';
-import { THEME_MEDIA_QUERY } from '~/styles/constants';
+import { THEME_MEDIA_QUERY } from '~/theme/constants';
 
 import { careers, skills } from './contents';
 

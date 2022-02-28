@@ -2,8 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC } from 'react';
 
+import { ReactComponent as IconGithubComponent } from '~/assets/svg/github.svg';
 import { Box, Chip, Container, Link, Text } from '~/components';
-import { ReactComponent as IconGithubComponent } from '~/styles/assets/img/github.svg';
 
 export const Introduce: FC = () => {
     return (

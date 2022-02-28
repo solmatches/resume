@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 
 import Pages from './pages';
-import { ThemeProvider } from './styles';
+import { ThemeProvider } from './theme';
 
 ReactDOM.render(
     <React.StrictMode>

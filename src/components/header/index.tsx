@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { THEME_SIZE, THEME_Z_INDEX } from '~/styles/constants';
+import { THEME_SIZE, THEME_Z_INDEX } from '~/theme/constants';
 
 import { Logo } from '../logo';
 

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { FC } from 'react';
 
-import Image from '~/styles/assets/logo.svg';
+import Image from '~/assets/svg/logo.svg';
 
 const DEFAULT_SIZE = '36px';
 

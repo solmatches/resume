@@ -23,8 +23,10 @@ const initialBrowserTheme = (): ThemeType => {
     const INVALID_THEME = browserTheme !== 'light' && browserTheme !== 'dark';
 
     if (!browserTheme || INVALID_THEME) {
-        const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
-        browserTheme = matches ? 'dark' : 'light';
+        const { matches: isDarkMode } = window.matchMedia(
+            '(prefers-color-scheme: dark)',
+        );
+        browserTheme = isDarkMode ? 'dark' : 'light';
     }
     return browserTheme;
 };

@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { ThemeSwitch } from '~/components';
 import { useAnalytics } from '~/hooks/use-analytics';
-import { THEME_SIZE } from '~/styles/constants';
+import { THEME_SIZE } from '~/theme/constants';
 
 import Main from './main';
 

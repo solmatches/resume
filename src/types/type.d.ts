@@ -1,6 +1,6 @@
 import '@emotion/react';
 
-import { THEME_COLOR } from '~/styles/constants';
+import { THEME_COLOR } from '~/theme/constants';
 
 type ValueOfUnion<T> = T extends { [k: T]: keyof T } ? T[keyof T] : undefined;
 
