@@ -14,23 +14,6 @@ interface Props {
     fallback?: React.ReactElement;
 }
 
-const FONT_FAMILIES = ['-apple-system', '"Noto Sans KR"', 'sans-serif'];
-
-const initialBrowserTheme = (): ThemeType => {
-    let browserTheme = window.localStorage.getItem(
-        'browser_theme',
-    ) as ThemeType | null;
-    const INVALID_THEME = browserTheme !== 'light' && browserTheme !== 'dark';
-
-    if (!browserTheme || INVALID_THEME) {
-        const { matches: isDarkMode } = window.matchMedia(
-            '(prefers-color-scheme: dark)',
-        );
-        browserTheme = isDarkMode ? 'dark' : 'light';
-    }
-    return browserTheme;
-};
-
 const reset = (theme: Theme) => css`
     html,
     body,
@@ -53,7 +36,7 @@ const reset = (theme: Theme) => css`
         margin: 0;
         background: ${theme.color.mono0};
         color: ${theme.color.mono4};
-        font-family: ${FONT_FAMILIES.join(', ')};
+        font-family: ${`-apple-system, "Noto Sans KR", sans-serif`};
         font-size: 1.6rem;
         font-weight: 400;
     }
@@ -122,12 +105,7 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
         <ThemeContext.Provider
             value={{
                 theme: browserTheme,
-                toggle: () => {
-                    const changeValue =
-                        browserTheme === 'light' ? 'dark' : 'light';
-                    window.localStorage.setItem('browser_theme', changeValue);
-                    setBrowserTheme(changeValue);
-                },
+                toggle: () => changeTheme(browserTheme),
             }}
         >
             <EmotionThemeProvider theme={{ color: THEME_COLOR[browserTheme] }}>
@@ -136,4 +114,26 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
             </EmotionThemeProvider>
         </ThemeContext.Provider>
     );
+
+    function changeTheme(theme: 'light' | 'dark') {
+        const changeValue = theme === 'light' ? 'dark' : 'light';
+        window.localStorage.setItem('browser_theme', changeValue);
+        setBrowserTheme(changeValue);
+    }
+
+    function initialBrowserTheme(): ThemeType {
+        let browserTheme = window.localStorage.getItem(
+            'browser_theme',
+        ) as ThemeType | null;
+        const INVALID_THEME =
+            browserTheme !== 'light' && browserTheme !== 'dark';
+
+        if (!browserTheme || INVALID_THEME) {
+            const { matches: isDarkMode } = window.matchMedia(
+                '(prefers-color-scheme: dark)',
+            );
+            browserTheme = isDarkMode ? 'dark' : 'light';
+        }
+        return browserTheme;
+    }
 };
