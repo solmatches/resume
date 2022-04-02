@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "프론트엔드 개발자 김소라의 이력서 페이지 입니다",
     "private": true,
-    "repository": "git@github.com:solmatches/solmatches.github.io.git",
+    "repository": "git@github.com:solmatches/resume.git",
     "author": "KimSora <solinepik@gmail.com>",
     "dependencies": {
         "@craco/craco": "^6.4.3",
@@ -73,5 +73,5 @@
     "resolutions": {
         "svgo": "^2.8.0"
     },
-    "homepage": "https://solmatches.github.io/"
+    "homepage": "https://solmatches.github.io/resume"
 }
