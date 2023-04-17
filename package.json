@@ -31,7 +31,7 @@
         "eject": "react-scripts eject",
         "clean": "rm -rf ./node_modules && rm -rf ./yarn.lock",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -b gh-pages -d build"
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -62,5 +62,5 @@
         "eslint-plugin-react": "^7.27.1",
         "prettier": "^2.5.1"
     },
-    "homepage": "https://solmatches.github.io/"
+    "homepage": "https://solmatches.github.io/resume"
 }
