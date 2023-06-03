@@ -12,7 +12,7 @@ import { THEME_MEDIA_QUERY } from '~/theme/constants';
 
 import { careers, skills } from './contents';
 
-type Career = typeof careers[number];
+type Career = (typeof careers)[number];
 
 const Projects: FC<{ projects: Career['projects'] }> = ({ projects }) => {
     return (
