@@ -1,15 +1,18 @@
 import { Theme } from '@emotion/react';
 import { Interpolation } from '@emotion/styled';
-import { ElementType, FC } from 'react';
+import { ComponentType, HTMLProps, ReactNode } from 'react';
 
-interface Props {
-    component?: ElementType;
+interface Props<T> {
+    children: ReactNode;
+    as?: ComponentType<HTMLProps<T>> | string;
     style?: Interpolation<Theme>;
 }
 
-export const Box: FC<Props> = ({ component = 'div', style, children }) => {
-    const Component = component;
-
+export const Box = <T,>({
+    as: Component = 'div',
+    style,
+    children,
+}: Props<T>) => {
     const styleProps = (theme: Theme) =>
         typeof style === 'function' ? style(theme) : style;
 

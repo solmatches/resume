@@ -24,7 +24,7 @@ export const Introduce: FC = () => {
                 </LinkChip>
             </Container>
             <Box
-                component="article"
+                as="article"
                 style={css`
                     margin: 4rem 0 2rem;
 
