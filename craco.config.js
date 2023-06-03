@@ -28,8 +28,8 @@ module.exports = {
         },
     ],
     devServer: {
-        client: {
-            overlay: false,
-        },
+        // client: {
+        // overlay: false,
+        // },
     },
 };
