@@ -2,34 +2,29 @@
 const CracoAlias = require('craco-alias');
 
 module.exports = {
-    babel: {
-        plugins: [
-            [
-                '@babel/plugin-transform-react-jsx',
-                { runtime: 'automatic', importSource: '@emotion/react' },
-            ],
-            [
-                '@emotion',
-                {
-                    autoLabel: 'dev-only',
-                    labelFormat: '[local]',
-                },
-            ],
-        ],
-    },
+  babel: {
     plugins: [
+      [
+        '@babel/plugin-transform-react-jsx',
+        { runtime: 'automatic', importSource: '@emotion/react' },
+      ],
+      [
+        '@emotion',
         {
-            plugin: CracoAlias,
-            options: {
-                source: 'tsconfig',
-                baseUrl: '.',
-                tsConfigPath: './tsconfig.extend.json',
-            },
+          autoLabel: 'dev-only',
+          labelFormat: '[local]',
         },
+      ],
     ],
-    devServer: {
-        // client: {
-        // overlay: false,
-        // },
+  },
+  plugins: [
+    {
+      plugin: CracoAlias,
+      options: {
+        source: 'tsconfig',
+        baseUrl: '.',
+        tsConfigPath: './tsconfig.extend.json',
+      },
     },
+  ],
 };
