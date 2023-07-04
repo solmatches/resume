@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/resume/static/js/main.6b1fbdd9.chunk.js",
+    "main.js.map": "/resume/static/js/main.6b1fbdd9.chunk.js.map",
+    "runtime-main.js": "/resume/static/js/runtime-main.93073944.js",
+    "runtime-main.js.map": "/resume/static/js/runtime-main.93073944.js.map",
+    "static/css/2.4f35401a.chunk.css": "/resume/static/css/2.4f35401a.chunk.css",
+    "static/js/2.17f10f07.chunk.js": "/resume/static/js/2.17f10f07.chunk.js",
+    "static/js/2.17f10f07.chunk.js.map": "/resume/static/js/2.17f10f07.chunk.js.map",
+    "index.html": "/resume/index.html",
+    "static/css/2.4f35401a.chunk.css.map": "/resume/static/css/2.4f35401a.chunk.css.map",
+    "static/js/2.17f10f07.chunk.js.LICENSE.txt": "/resume/static/js/2.17f10f07.chunk.js.LICENSE.txt",
+    "static/media/github.05e8a927.svg": "/resume/static/media/github.05e8a927.svg",
+    "static/media/logo.835bf064.svg": "/resume/static/media/logo.835bf064.svg",
+    "static/media/400.css": "/resume/static/media/noto-sans-kr-99-400-normal.de50c87b.woff",
+    "static/media/700.css": "/resume/static/media/noto-sans-kr-99-700-normal.e5c1f01d.woff2",
+    "static/media/900.css": "/resume/static/media/noto-sans-kr-99-900-normal.7d3851ec.woff",
+    "static/media/theme-dark.fcfb4325.svg": "/resume/static/media/theme-dark.fcfb4325.svg",
+    "static/media/theme-light.fc8694ae.svg": "/resume/static/media/theme-light.fc8694ae.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93073944.js",
+    "static/css/2.4f35401a.chunk.css",
+    "static/js/2.17f10f07.chunk.js",
+    "static/js/main.6b1fbdd9.chunk.js"
+  ]
+}
