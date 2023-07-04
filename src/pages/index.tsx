@@ -10,23 +10,23 @@ import { THEME_SIZE } from '~/theme/constants';
 import Main from './main';
 
 const Content = styled.main`
-    width: 100%;
-    max-width: ${THEME_SIZE.contentMaxWidth};
-    margin: 0 auto;
+  width: 100%;
+  max-width: ${THEME_SIZE.contentMaxWidth};
+  margin: 0 auto;
 `;
 
 const Pages: FC = () => {
-    useAnalytics();
+  useAnalytics();
 
-    return (
-        <Content>
-            <ThemeSwitch />
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-        </Content>
-    );
+  return (
+    <Content>
+      <ThemeSwitch />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Content>
+  );
 };
 
 export default Pages;

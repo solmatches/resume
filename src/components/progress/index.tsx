@@ -11,53 +11,43 @@ const amplitude = 10;
 const LOGO_SIZE = '60px';
 
 const Loadings = styled.svg`
-    width: 160px;
-    height: 54px;
+  width: 160px;
+  height: 54px;
 
-    circle {
-        fill: ${({ theme }) => theme.color.primary};
-        stroke: ${({ theme }) => theme.color.mono1};
-    }
+  circle {
+    fill: ${({ theme }) => theme.color.primary};
+    stroke: ${({ theme }) => theme.color.mono1};
+  }
 `;
 
 export const Progress: FC = () => {
-    let { current: currentAnimationTime } = useRef(0);
-    const [cy, setCy] = useState([initCy, initCy, initCy]);
+  let { current: currentAnimationTime } = useRef(0);
+  const [cy, setCy] = useState([initCy, initCy, initCy]);
 
-    useEffect(() => {
-        let refID: number;
-        const animate = () => {
-            const newVal = cy.map(
-                (c, i) =>
-                    (cy[i] =
-                        initCy +
-                        amplitude * Math.sin(currentAnimationTime - i)),
-            );
-            setCy(newVal);
+  useEffect(() => {
+    let refID: number;
+    const animate = () => {
+      const newVal = cy.map((c, i) => (cy[i] = initCy + amplitude * Math.sin(currentAnimationTime - i)));
+      setCy(newVal);
 
-            currentAnimationTime += 0.15;
-            refID = requestAnimationFrame(animate);
-        };
-        animate();
+      currentAnimationTime += 0.15;
+      refID = requestAnimationFrame(animate);
+    };
+    animate();
 
-        return () => {
-            cancelAnimationFrame(refID);
-        };
-    }, []);
+    return () => {
+      cancelAnimationFrame(refID);
+    };
+  }, []);
 
-    return (
-        <>
-            <Logo size={LOGO_SIZE} />
-            <Loadings viewBox="0 0 100 50">
-                {cy.map((circle, index) => (
-                    <circle
-                        key={index}
-                        cy={circle}
-                        cx={BaseCx + addCx * index}
-                        r="5"
-                    />
-                ))}
-            </Loadings>
-        </>
-    );
+  return (
+    <>
+      <Logo size={LOGO_SIZE} />
+      <Loadings viewBox="0 0 100 50">
+        {cy.map((circle, index) => (
+          <circle key={index} cy={circle} cx={BaseCx + addCx * index} r="5" />
+        ))}
+      </Loadings>
+    </>
+  );
 };

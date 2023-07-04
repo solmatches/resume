@@ -10,12 +10,12 @@ import Pages from './pages';
 import { ThemeProvider } from './theme';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <ThemeProvider>
-            <Router>
-                <Pages />
-            </Router>
-        </ThemeProvider>
-    </React.StrictMode>,
-    document.getElementById('root'),
+  <React.StrictMode>
+    <ThemeProvider>
+      <Router>
+        <Pages />
+      </Router>
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );

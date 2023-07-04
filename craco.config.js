@@ -5,14 +5,19 @@ module.exports = {
   babel: {
     plugins: [
       [
-        '@babel/plugin-transform-react-jsx',
-        { runtime: 'automatic', importSource: '@emotion/react' },
-      ],
-      [
         '@emotion',
         {
           autoLabel: 'dev-only',
           labelFormat: '[local]',
+        },
+      ],
+    ],
+    presets: [
+      [
+        '@babel/preset-react',
+        {
+          runtime: 'automatic',
+          importSource: '@emotion/react',
         },
       ],
     ],
