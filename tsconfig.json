@@ -2,8 +2,18 @@
   "extends": "./tsconfig.extend.json",
   "compilerOptions": {
     "target": "es5",
-    "lib": ["es6", "dom", "dom.iterable", "esnext"],
-    "types": ["node", "react", "react-dom", "jest"],
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [
+      "node",
+      "react",
+      "react-dom",
+      "jest"
+    ],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -26,5 +36,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
